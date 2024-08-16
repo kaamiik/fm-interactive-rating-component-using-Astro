@@ -65,3 +65,9 @@ $color-neutral-800: var(--neutral-800);
 $color-neutral-900: var(--neutral-900);
 
 $color-primary-400: var(--primary-400);
+
+$card-gradient: linear-gradient(
+  to bottom,
+  hsl(215, 20%, 17%) 0%,
+  hsl(215, 24%, 12%) 100%
+);

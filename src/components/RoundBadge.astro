@@ -1,0 +1,58 @@
+---
+const { width, height, desktopWidth, desktopHeight, htmlFor } = Astro.props;
+---
+
+{
+  htmlFor ? (
+    <label
+      for={htmlFor}
+      style={`--badge-width: ${width}; --badge-height: ${height}; --badge-desktop-width: ${desktopWidth}; --badge-desktop-height: ${desktopHeight};`}
+    >
+      <slot />
+    </label>
+  ) : (
+    <div
+      style={`--badge-width: ${width}; --badge-height: ${height}; --badge-desktop-width: ${desktopWidth}; --badge-desktop-height: ${desktopHeight};`}
+    >
+      <slot />
+    </div>
+  )
+}
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  div,
+  label {
+    display: grid;
+    place-content: center;
+    width: var(--badge-width);
+    height: var(--badge-height);
+    border-radius: 100vh;
+    aspect-ratio: 1;
+    background-color: $round-badge-background-color;
+
+    @include mq(medium) {
+      width: var(--badge-desktop-width);
+      height: var(--badge-desktop-height);
+    }
+  }
+
+  label {
+    font-size: $form-label-font-size;
+    font-weight: $form-label-font-weight;
+    color: $form-label-color;
+    cursor: pointer;
+    transition: 275ms ease;
+
+    &:has(input[type="radio"]:is(:hover, :focus-visible)) {
+      background-color: $form-label-background-hover;
+      color: $form-label-color-hover;
+    }
+
+    &:has(input[type="radio"]:checked) {
+      background-color: $form-label-background-checked;
+      color: $form-label-color-checked;
+    }
+  }
+</style>

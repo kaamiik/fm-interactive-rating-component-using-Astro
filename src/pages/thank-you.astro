@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Frontend Mentor | Interactive rating component">
+  <div class="container">
+    <Card>
+      <img
+        class="mx-auto"
+        src="/assets/images/illustration-thank-you.svg"
+        alt="Thank You Illustration"
+      />
+      <!-- Thank you state start -->
+      <p class="rating-text" aria-live="polite">
+        You selected <span class="js-rating"></span> out of 5
+      </p>
+      <h1 class="heading-1 text-center margin-block-start-6">Thank you!</h1>
+      <p class="text-center margin-block-start-3">
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don’t hesitate to get in touch!
+      </p>
+      <!-- Thank you state end -->
+    </Card>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const ratingText = document.querySelector(".js-rating");
+    const searchParams = new URLSearchParams(window.location.search);
+    const rating = searchParams.get("rating");
+
+    ratingText.textContent = rating;
+  });
+</script>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  img {
+    width: 144px;
+    height: 98px;
+
+    @include mq(medium) {
+      width: 162px;
+      height: 108px;
+    }
+  }
+
+  .rating-text {
+    margin-block-start: $size-8;
+    margin-inline: auto;
+    width: fit-content;
+    background-color: $rating-text-background;
+    color: $rating-text-color;
+    padding: $rating-text-padding;
+    border-radius: $rating-text-border-radius;
+  }
+</style>

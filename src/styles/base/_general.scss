@@ -6,13 +6,23 @@ body {
   font-size: $body-font-size;
   color: $body-text-color;
   background-color: $body-background-color;
-  line-height: $body-line-height;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-a {
-  color: $link-color;
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-a:is(:hover, :focus) {
-  color: $link-color-hover;
-}
+// a {
+//   color: $link-color;
+// }
+
+// a:is(:hover, :focus) {
+//   color: $link-color-hover;
+// }

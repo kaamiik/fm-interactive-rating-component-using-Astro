@@ -1,0 +1,41 @@
+---
+import RoundBadge from "./RoundBadge.astro";
+
+// Create an array with numbers 1 to 5
+const ratings = [1, 2, 3, 4, 5];
+---
+
+<div>
+  {
+    ratings.map((rating) => (
+      <RoundBadge
+        width="42px"
+        height="42px"
+        desktopWidth="51px"
+        desktopHeight="51px"
+        htmlFor={`rate${rating}`}
+      >
+        {rating}
+        <input
+          type="radio"
+          name="rating"
+          id={`rate${rating}`}
+          value={rating}
+          class="visually-hidden"
+          required
+        />
+      </RoundBadge>
+    ))
+  }
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  div {
+    margin-block-start: $size-5;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+</style>
