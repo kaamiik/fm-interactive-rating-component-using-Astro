@@ -123,7 +123,7 @@ $button-primary-background-hover: $color-neutral-100;
 
 // cards
 $card-margin-block: $size-8;
-$card-padding-mobile: $size-6 $size-8 $size-8;
+$card-padding-mobile: $size-6 $size-6 $size-8;
 $card-padding-desktop: $size-8;
 $card-border-radius-mobile: $border-radius-1;
 $card-border-radius-desktop: $border-radius-2;
@@ -156,6 +156,8 @@ $form-label-color-checked: $color-neutral-100;
 // $form-placeholder-font-size: $body-font-size;
 
 // $form-group-spacing: 0.5rem;
+
+$rating-selctor-gap: 0.5rem;
 
 // Thank You page
 $rating-text-background: $color-neutral-800;
