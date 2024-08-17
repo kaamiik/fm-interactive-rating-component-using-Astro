@@ -57,6 +57,11 @@ fieldset {
   margin: 0;
 }
 
+legend {
+  display: block;
+  padding: 0;
+}
+
 /* A elements that don't have a class get default styles */
 a {
   text-decoration-skip-ink: auto;

@@ -45,9 +45,16 @@ const { width, height, desktopWidth, desktopHeight, htmlFor } = Astro.props;
     cursor: pointer;
     transition: 275ms ease;
 
-    &:has(input[type="radio"]:is(:hover, :focus-visible)) {
+    &:has(input[type="radio"]:hover) {
       background-color: $form-label-background-hover;
       color: $form-label-color-hover;
+    }
+
+    &:has(input[type="radio"]:focus-visible) {
+      background-color: $form-label-background-hover;
+      color: $form-label-color-hover;
+      outline: 2px solid $color-primary-400;
+      outline-offset: 2px;
     }
 
     &:has(input[type="radio"]:checked) {
